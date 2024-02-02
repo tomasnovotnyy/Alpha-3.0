@@ -1,4 +1,7 @@
 # Alpha-3.0 (Databázový systém - Kybernetická bezpečnost)
+## Autor: Tomáš Novotný, kontakt: XXXXXXXXXXX
+## Datum vypracování: 19.01.2024 - 04.02.2024
+## Název a adresa školy: Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30
 
 # *Popis programu*
 - Alpha-3.0 představuje monolitickou aplikaci pro správu uživatelů, rolí a oprávnění v relační databázi.
@@ -65,5 +68,5 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
    - Demonstrace transakční operace, která registruje nového uživatele a přiřazuje mu roli.
 4. Import dat z CSV
    - Import uživatelů a rolí z CSV souboru do databáze.
-5. Získání Dat
+5. Získání Dat (Report)
    - Získání dat z databázového pohledu (UserLogsView) pro report uživatelských operací.
