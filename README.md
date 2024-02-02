@@ -34,3 +34,22 @@ Pro správné spuštění aplikace je třeba mít nainstalovaný Python, knihovn
 
 Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatelské rozhraní, které umožní interakci a využití všech funkcí aplikace.
 </br></br>
+
+# *Struktura projektu*
+- `/Doc`: Adresář pro dokumentaci.
+  - README.md
+- `/Log`: Adresář pro logování chyb a událostí.
+  - ErrorFileLog.txt
+- `/src`: Adresář obsahující třídy pro funkcionalitu aplikace.
+  - `/DB`
+    - Monolithic.py
+  - `/UI`
+    - ConnectWindow.py
+    - CreateWindow.py
+    - CRUDWindow.py
+    - ImportWindow.py
+    - ReportWindow.py
+    - UI.py
+- config.json
+- Main.py
+</br></br>
