@@ -53,3 +53,17 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
 - config.json
 - Main.py
 </br></br>
+
+# *Funkce a Možnosti*
+1. Připojení a Odpojení od Databáze
+   - Uživatel se může připojit k databázi pomocí konfiguračního souboru (config.json) a následně se může i ručně odpojit.
+2. Správa uživatelů
+   - Vytváření nových uživatelů s přidělením rolí.
+   - Aktualizace rolí existujících uživatelů.
+   - Odstranění uživatelů z databáze.
+3. Transakce
+   - Demonstrace transakční operace, která registruje nového uživatele a přiřazuje mu roli.
+4. Import dat z CSV
+   - Import uživatelů a rolí z CSV souboru do databáze.
+5. Získání Dat
+   - Získání dat z databázového pohledu (UserLogsView) pro report uživatelských operací.
