@@ -22,7 +22,23 @@ Nebo můžete použít variantu pro ostatní níže, ale při vytvoření projek
 ``` python
 pip install --user pyodbc
 ```
-</br>
+</br></br>
+
+# Nastavení konfiguračního souboru pro připojení k databázi
+Před spuštěním programu je nutné nastavit konfigurační soubor, který obsahuje informace o připojení k databázi. Níže jsou uvedeny kroky, které je třeba provést:
+- **Nastavte hodnoty v konfiguračním souboru**
+   - Otevřete `config.json`, který se nachází ve složce `/Conf`, ve svém oblíbeném textovém editoru a nastavte následující hodnoty podle vašich potřeb:
+   ```json
+   {
+     "database_config": {
+       "SERVER": "NÁZEV_SERVERU",
+       "DATABASE": "NÁZEV_DATABÁZE",
+       "UID": "UŽIVATELSKÉ_ID",
+       "PWD": "HESLO"
+     }
+   }
+
+</br></br>
 
 # *Spuštění programu*
 Pro správné spuštění aplikace je třeba mít nainstalovaný Python, knihovnu pyodbc a je zapotřebí spustit skript Main.py z terminálu.</br>
@@ -39,6 +55,8 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
 </br></br>
 
 # *Struktura projektu*
+- `/Conf`: Adresář pro konfigurační soubor.
+  - config.json
 - `/Doc`: Adresář pro dokumentaci.
   - README.md
 - `/Log`: Adresář pro logování chyb a událostí.
@@ -53,7 +71,6 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
     - ImportWindow.py
     - ReportWindow.py
     - UI.py
-- config.json
 - Main.py
 </br></br>
 
