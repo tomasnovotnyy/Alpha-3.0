@@ -149,3 +149,86 @@ Třída `Monolithic` slouží jako jádro aplikace pro správu uživatelů a rol
      ```
 ## *Použité Externí Knihovny*
 `pyodbc`: Slouží k práci s ODBC databázemi. Pro instalaci je dobré se seznámit s částí [Instalace knihovny pyodbc](https://github.com/tomasnovotnyy/Alpha-3.0?tab=readme-ov-file#instalace-knihovny-pyodbc)
+</br></br>
+
+# *Třída ConnectWindow.py*
+Třída `ConnectWindow` představuje uživatelské okno pro připojení a odpojení od databáze. Slouží k řízení připojení a aktualizaci stavu připojení v aplikaci.
+
+## *Metody*
+`__init__(self, root, return_callback, monolithic, update_connection_callback, update_disconnection_callback)`: Konstruktor, který inicializuje objekt třídy ConnectWindow.
+`return_to_previous(self)`: Metoda pro návrat do předchozího okna.
+`connect_to_database(self)`: Metoda pro připojení k databázi.
+`disconnect_from_database(self)`: Metoda pro odpojení od databáze.
+`update_connection_status(self)`: Metoda pro aktualizaci zobrazení stavu připojení.
+`on_close(self)`: Metoda pro zavření okna a zachycení zavíracího signálu. 
+</br></br>
+
+# *Třída CreateWindow.py*
+Třída `CreateWindow` představuje uživatelské okno pro vytvoření nového uživatele. Toto okno slouží k zadání informací o novém uživateli, který má být vložen do databáze.
+
+## *Metody*
+`__init__(self, root, monolithic, return_callback)`: Konstruktor, který inicializuje objekt třídy CreateWindow.
+`create_action(self)`: Metoda pro vytvoření nového uživatele. Získává informace z vstupních polí, volá metodu insert_user z třídy `Monolithic` a zobrazuje odpovídající zprávy.
+`disable_close_button(self)`: Metoda pro deaktivaci tlačítka pro zavření okna. (Zablokování možnosti zavření okna, aby uživatel nemohl okno uzavřít, dokud neskončí operaci.)
+`enable_return_button(self)`: Metoda pro aktivaci tlačítka pro návrat zpět. (Povolení tlačítka pro návrat po dokončení operace.)
+`disable_return_button(self)`: Metoda pro deaktivaci tlačítka pro návrat zpět. (Zablokování tlačítka pro návrat během probíhající operace.)
+`clear_entries(self)`: Metoda pro vyčištění vstupních polí (vymazání všech zadaných hodnot).
+`return_to_previous(self)`: Metoda pro návrat zpět do předchozího okna. Zavírá aktuální okno a volá případný callback pro návrat na předchozí obrazovku.
+</br></br>
+
+# *Třída CRUDWindow.py*
+Třída `CRUDWindow` reprezentuje okno pro vytvoření, úpravu a smazání uživatele (CRUD operace).
+
+## *Metody*
+`__init__(self, root, return_callback, monolithic, connect_window)`: Konstruktor, který inicializuje objekt třídy CRUDWindow.
+`return_to_previous(self)`: Metoda pro návrat do předchozího okna. Zavírá aktuální okno a volá případný callback pro návrat na předchozí obrazovku.
+`create_action(self)`: Metoda pro vytvoření nového okna pro vytvoření uživatele. Vytváří novou instanci třídy `CreateWindow` a skrývá aktuální okno.
+`alter_action(self)`: Metoda pro úpravu existujícího uživatele. Volá metodu `update_user` z třídy `Monolithic`.
+`disable_return_button(self)`: Metoda pro deaktivaci tlačítka pro návrat.
+`enable_return_button(self)`: Metoda pro aktivaci tlačítka pro návrat.
+`delete_action(self)`: Metoda pro smazání existujícího uživatele. Volá metodu `delete_user` z třídy `Monolithic`.
+</br></br>
+
+# *Třída ImportWindow.py*
+Třída `ImportWindow` reprezentuje okno pro import dat z CSV souboru do databáze.
+
+## *Metody*
+`__init__(self, root, monolithic)`: Konstruktor, který inicializuje objekt třídy ImportWindow.
+`import_csv(self)`: Metoda pro import dat z CSV souboru do databáze. Volá metodu `import_csv` z třídy `Monolithic`. 
+</br></br>
+
+# *Třída ReportWindow.py*
+Třída `ReportWindow` slouží pro zobrazení okna s reportem.
+
+## *Metody*
+`__init__(self, root, return_callback, monolithic)`: Konstruktor, který inicializuje objekt třídy ReportWindow a vytváří okno s reportem.
+`on_close(self)`: Metoda pro zavření okna a zachycení zavíracího signálu.
+`check_resize(self, event)`: Metoda pro kontrolu změny velikosti okna.
+</br></br>
+
+# *Třída UI.py*
+Třída `UI` reprezentuje uživatelské rozhraní mé aplikace Alpha 3.0.
+
+## *Metody*
+`__init__(self, root)`: Konstruktor, který inicializuje objekt třídy UI a nastavuje hlavní okno aplikace.
+`open_connection_window(self)`: Metoda pro otevření nového okna pro připojení k databázi.
+`update_ui_after_connection(self)`: Metoda pro aktualizaci UI po úspěšném připojení k databázi.
+`update_ui_after_disconnection(self)`: Metoda pro aktualizaci UI po úspěšném odpojení od databáze.
+`open_crud_window(self)`: Metoda pro otevření nového okna pro CRUD operace.
+`open_report_window(self)`: Metoda pro otevření nového okna pro zobrazení reportu.
+`open_import_window(self)`: Metoda pro otevření nového okna pro import dat z CSV souboru.
+`begin_transaction(self)`: Metoda pro zahájení transakce.
+`return_to_previous(self)`: Metoda pro návrat do předchozího okna.
+`on_close(self)`: Metoda pro zavření okna a zachycení zavíracího signálu.
+</br></br>
+
+# *Třída Main.py*
+Třída `Main.py` obsahuje hlavní část programu, která inicializuje instanci uživatelského rozhraní a spouští hlavní smyčku pro zobrazení GUI.
+
+## *Postup inicializace*
+1. Inicializace hlavního okna Tkinter.
+2. Vytvoření instance třídy `UI`.
+3. Spuštění hlavní smyčky pro zobrazení GUI.
+
+## *Zachycení chyb*
+Pokud během běhu programu dojde k chybě, dojde k zachycení chyby a zapsání dané chyby do souboru `Log/ErrorFileLog.txt`.
