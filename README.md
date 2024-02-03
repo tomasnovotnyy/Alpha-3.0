@@ -56,12 +56,15 @@ Před spuštěním programu je nutné nastavit konfigurační soubor, který obs
 Pro správné spuštění aplikace je třeba mít nainstalovaný Python, knihovnu pyodbc a je zapotřebí spustit skript Main.py z terminálu.</br>
 ## *Spuštění skriptu Main.py:*
 1. Stáhněte si .zip soubor programu do svého PC.
-2. Soubor extrahujte. Extrahovaný soubor bude obsahovat 2 následující soubory:
-   - Složka Alpha2.0, kde je uložený celý projekt.
-   - Textový soubor s odkazem na tuto GitHub stránku a s kontaktem na mě.
+2. Soubor extrahujte. Extrahovaný soubor bude obsahovat 4 následující soubory:
+   - Složka Alpha3.0, kde je uložený celý projekt.
+   - Složka SQL s potřebnými daty, které se importují do databáze.
+   - Složka TestCase, která obsahuje 4 testovací scénáře.
+   - Textový soubor s odkazem na tuto GitHub stránku.
 4. Spusťte si příkazový řádek.
 5. Pomocí příkazu `cd` se dostaňte do složky, kde máte uložený projekt.
-6. Pokud jste již uvnitř složky, kde máte uložený projekt, tak program spustíte následujícím příkazem: `python Main.py`
+6. Nainstalujte knhovnu pyodbc. Pro instalaci je dobré se seznámit s částí [Instalace knihovny pyodbc](https://github.com/tomasnovotnyy/Alpha-3.0?tab=readme-ov-file#instalace-knihovny-pyodbc)
+7. Pokud jste již uvnitř složky, kde máte uložený projekt a máte nainstalovanou knihovnu pyodbc, tak program spustíte následujícím příkazem: `python Main.py`
 
 Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatelské rozhraní, které umožní interakci a využití všech funkcí aplikace.
 </br></br>
