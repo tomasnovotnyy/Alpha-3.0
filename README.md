@@ -1,5 +1,5 @@
 # Alpha-3.0 (Databázový systém - Kybernetická bezpečnost)
-## Autor: Tomáš Novotný, kontakt: XXXXXXXXXXX
+## Autor: Tomáš Novotný, kontakt: novotny10@spsejecna.cz
 ## Datum vypracování: 19.01.2024 - 04.02.2024
 ## Název a adresa školy: Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30
 
@@ -7,6 +7,14 @@
 - Alpha-3.0 představuje monolitickou aplikaci pro správu uživatelů, rolí a oprávnění v relační databázi.
 - Aplikace je napsána v jazyce Python a využívá knihovny pro uživatelské rozhraní (Tkinter), práci s databází (pyodbc) a manipulaci s daty (csv).
 - Program je navržen pro jednoduchou a přehlednou správu uživatelů, rolí, oprávění a operací nad nimi.
+
+</br></br>
+
+# *Databáze*
+## *E-R model*
+- Konceptuální (logický) model databáze se nachází v /SQL/img/Logical.png
+- Relační model databáze se nachází v /SQL/img/Relational.png
+
 </br></br>
 
 # *Instalace knihovny pyodbc*
@@ -24,7 +32,7 @@ pip install --user pyodbc
 ```
 </br></br>
 
-# Nastavení konfiguračního souboru pro připojení k databázi
+# *Nastavení konfiguračního souboru pro připojení k databázi*
 Před spuštěním programu je nutné nastavit konfigurační soubor, který obsahuje informace o připojení k databázi. Níže jsou uvedeny kroky, které je třeba provést:
 - **Nastavte hodnoty v konfiguračním souboru**
    - Otevřete `config.json`, který se nachází ve složce `/Conf`, ve svém oblíbeném textovém editoru a nastavte následující hodnoty podle vašich potřeb:
@@ -37,6 +45,14 @@ Před spuštěním programu je nutné nastavit konfigurační soubor, který obs
        "PWD": "HESLO"
      }
    }
+
+</br></br>
+
+# *Import struktury databáze a dat od zadavatele*
+- Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
+- Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
+- Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
+- Pro nahrání pohledů je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
 
 </br></br>
 
