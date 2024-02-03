@@ -93,6 +93,11 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
      - data.sql
      - script.sql
      - structure.sql
+- `TestCase`
+   - TestCase - 1.pdf
+   - TestCase - 2.pdf
+   - TestCase - 3.pdf
+   - TestCase - 4.pdf
 - Odkaz na plnohodnotnou dokumentaci.txt
 </br></br>
 
