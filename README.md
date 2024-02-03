@@ -110,3 +110,40 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
 5. Získání Dat (Report)
    - Získání dat z databázového pohledu (UserLogsView) pro report uživatelských operací.
 </br></br>
+
+# *Třída Monolithic.py*
+Třída `Monolithic` slouží jako jádro aplikace pro správu uživatelů a rolí v databázi. Obsahuje metody pro připojení k databázi, vkládání, aktualizaci a mazání uživatelů, začátek transakce, importování dat z CSV souboru a získání dat z databáze.
+
+## *Metody*
+`__init__(self, config_file_path='Conf/config.json')`: Konstruktor inicializuje objekt třídy `Monolithic` a načte konfigurační data z JSON souboru.
+
+`connect(self)`: Metoda pro připojení k databázi na základě konfiguračních dat.
+
+`disconnect(self)`: Metoda pro odpojení od databáze.
+
+`insert_user(self, first_name, last_name, email, password, create_window: CreateWindow)`: Metoda pro vložení nového uživatele do databáze a přiřazení role.
+
+`update_user(self, crud_window: CRUDWindow)`: Metoda pro aktualizaci uživatele v databázi a přiřazení role.
+
+`delete_user(self, crud_window: CRUDWindow)`: Metoda pro smazání uživatele z databáze a případně i jeho role.
+
+`begin_transaction(self)`: Metoda pro zahájení nové transakce pro vložení nového uživatele a přiřazení role.
+
+`fetch_data(self)`: Získání dat z databáze -> List obsahující všechny záznamy z pohledu (View) `UserLogsView`.
+
+`import_csv(self)`: Importování dat z CSV souboru do databáze.
+   ## *Jak vložit data ze souboru CSV*
+   - Pro správný import dat ze souboru CSV je zapotřebí znát následující body:
+     1. Data ze souboru se vloží do tabulek `Users` a `Roles`.
+     2. Při vkládání nového uživatele je důležité napsat nejdříve křestní jméno uživetele, poté znak `,` a poté bez mezery pokračovat příjmením, následně znovu znak `,` a znovu pokračovat bez mezery e-mailem, nakonec znovu pokračovat znakem `,` a poté znovu bez mezery pokračovat heslem uživatele.
+     3. Pokud si přejete vložit více uživatelů najednou, tak každého nového uživatele napište hned pod řádek předchozího uživatele.
+     4. Když budete chtít vložit nové role, tak udělejte volný řádek pod uživateli, tím separujete jaká data se mají vložit do tabulky `Users` a jaká do tabulky `Roles`.
+     5. Při vkládání nové role je důležité napsat nejříve název role, poté znak `,` a poté bez mezery pokračovat popisem dané role.
+     ### *Příklad správně napsaného CSV souboru připraveného k importu do databáze*
+     ```csv
+       John,Doe,john.doe@exampasdle.com,password123
+       Jane,Smith,jane.smith@exdsfample.com,securepass
+
+       Admin,Administrator with full access
+       User,Regular user with limited access
+     ```
