@@ -147,3 +147,5 @@ Třída `Monolithic` slouží jako jádro aplikace pro správu uživatelů a rol
        Admin,Administrator with full access
        User,Regular user with limited access
      ```
+## *Použité Externí Knihovny*
+`pyodbc`: Slouží k práci s ODBC databázemi. Pro instalaci je dobré se seznámit s částí [Instalace knihovny pyodbc](https://github.com/tomasnovotnyy/Alpha-3.0?tab=readme-ov-file#instalace-knihovny-pyodbc)
