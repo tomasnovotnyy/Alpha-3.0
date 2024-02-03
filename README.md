@@ -47,9 +47,9 @@ Před spuštěním programu je nutné nastavit konfigurační soubor, který obs
 
 # *Import struktury databáze a dat od zadavatele*
 - Nejprve je nutno si vytvořit novou databázi, čistou, bez jakýchkoliv dat.
-- Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
-- Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
-- Pro nahrání pohledů je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
+- Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /SQL/sql/structure.sql, který slouží pro nahrání struktury mé databáze.
+- Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /SQL/sql/data.sql.
+- Pro nahrání pohledů je zapotřebí nahrát soubor script.sql, který se nachází v /SQL/sql/script.sql.
 </br></br>
 
 # *Spuštění programu*
