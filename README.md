@@ -7,14 +7,12 @@
 - Alpha-3.0 představuje monolitickou aplikaci pro správu uživatelů, rolí a oprávnění v relační databázi.
 - Aplikace je napsána v jazyce Python a využívá knihovny pro uživatelské rozhraní (Tkinter), práci s databází (pyodbc) a manipulaci s daty (csv).
 - Program je navržen pro jednoduchou a přehlednou správu uživatelů, rolí, oprávění a operací nad nimi.
-
 </br></br>
 
 # *Databáze*
 ## *E-R model*
 - Konceptuální (logický) model databáze se nachází v /SQL/img/Logical.png
 - Relační model databáze se nachází v /SQL/img/Relational.png
-
 </br></br>
 
 # *Instalace knihovny pyodbc*
@@ -45,7 +43,6 @@ Před spuštěním programu je nutné nastavit konfigurační soubor, který obs
        "PWD": "HESLO"
      }
    }
-
 </br></br>
 
 # *Import struktury databáze a dat od zadavatele*
@@ -53,7 +50,6 @@ Před spuštěním programu je nutné nastavit konfigurační soubor, který obs
 - Poté je zapotřebí do této databáze nahrát soubor, který se nachází v /sql/structure.sql, který slouží pro nahrání struktury mé databáze.
 - Pokud si přejete načíst do databáze testovací data, je nutno nahrát ještě soubor, který se nachází v /sql/data.sql.
 - Pro nahrání pohledů je zapotřebí nahrát soubor script.sql, který se nachází v /sql/script.sql.
-
 </br></br>
 
 # *Spuštění programu*
@@ -71,23 +67,33 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
 </br></br>
 
 # *Struktura projektu*
-- `/Conf`: Adresář pro konfigurační soubor.
-  - config.json
-- `/Doc`: Adresář pro dokumentaci.
-  - README.md
-- `/Log`: Adresář pro logování chyb a událostí.
-  - ErrorFileLog.txt
-- `/src`: Adresář obsahující třídy pro funkcionalitu aplikace.
-  - `/DB`
-    - Monolithic.py
-  - `/UI`
-    - ConnectWindow.py
-    - CreateWindow.py
-    - CRUDWindow.py
-    - ImportWindow.py
-    - ReportWindow.py
-    - UI.py
-- Main.py
+- `Alpha3.0`
+   - `/Conf`: Adresář pro konfigurační soubor.
+     - config.json
+   - `/Doc`: Adresář pro dokumentaci.
+     - README.md
+   - `/Log`: Adresář pro logování chyb a událostí.
+     - ErrorFileLog.txt
+   - `/src`: Adresář obsahující třídy pro funkcionalitu aplikace.
+     - `/DB`
+       - Monolithic.py
+     - `/UI`
+       - ConnectWindow.py
+       - CreateWindow.py
+       - CRUDWindow.py
+       - ImportWindow.py
+       - ReportWindow.py
+       - UI.py
+   - Main.py
+- `SQL`
+   - `/img`: Adresář pro obrázky logického a relačního modelu databáze.
+     - Logical.png
+     - Relational.png
+   - `/sql`: Adresář pro import databázové struktury, dat a scriptu.
+     - data.sql
+     - script.sql
+     - structure.sql
+- Odkaz na plnohodnotnou dokumentaci.txt
 </br></br>
 
 # *Funkce a Možnosti*
@@ -103,3 +109,4 @@ Po úspěšném spuštění skriptu se program inicializuje a zobrazí uživatel
    - Import uživatelů a rolí z CSV souboru do databáze.
 5. Získání Dat (Report)
    - Získání dat z databázového pohledu (UserLogsView) pro report uživatelských operací.
+</br></br>
