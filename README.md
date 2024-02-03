@@ -4,7 +4,7 @@
 ## Název a adresa školy: Střední průmyslová škola elektrotechnická, Praha 2, Ječná 30
 
 # *Popis programu*
-- Alpha-3.0 představuje monolitickou aplikaci pro správu uživatelů, rolí a oprávnění v relační databázi.
+- Alpha-3.0 představuje monolitickou aplikaci pro správu uživatelů, rolí a oprávnění v relační databázi MSSQL.
 - Aplikace je napsána v jazyce Python a využívá knihovny pro uživatelské rozhraní (Tkinter), práci s databází (pyodbc) a manipulaci s daty (csv).
 - Program je navržen pro jednoduchou a přehlednou správu uživatelů, rolí, oprávění a operací nad nimi.
 </br></br>
