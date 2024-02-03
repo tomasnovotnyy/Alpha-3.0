@@ -1,0 +1,8 @@
+{
+  "database_config": {
+    "SERVER": "...",
+    "DATABASE": "...",
+    "UID": "...",
+    "PWD": "..."
+  }
+}
